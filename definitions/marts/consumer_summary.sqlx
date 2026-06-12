@@ -1,0 +1,17 @@
+config {
+  type: "table",
+  schema: "consumer_gold",
+  name: "consumer_summary",
+  description: "Business-ready consumer summary aggregated by country & state (gold layer)."
+}
+
+SELECT
+  country,
+  state,
+  COUNT(*) AS total_consumers,
+  COUNTIF(is_active) AS active_consumers,
+  ROUND(AVG(age), 1) AS avg_age
+FROM
+  ${ref("consumer_clean")}
+GROUP BY
+  country, state

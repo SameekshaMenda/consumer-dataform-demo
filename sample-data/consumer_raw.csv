@@ -1,0 +1,6 @@
+consumer_id,name,age,gender,email,phone,address,city,state,country,registration_date,is_active
+1,"  Alice Smith",29,"F"," alice@example.com ","(123) 456-7890","12 Elm St","Bangalore","Karnataka","India","2023-05-01",true
+2,"Bob Roy",34,"M","BOB@EXAMPLE.com","987-654-3210","45 Oak St","Mysuru","Karnataka","India","2022-11-15",true
+3,"Carla Mehta",41,"F","carla@example.com","12345","9 MG Road","Chennai","Tamil Nadu","India","2021-08-20",false
+4,"  David Iyer  ",23,"M","david@example.com","+91 98765 43210","78 Park Ave","Madikeri","Karnataka","India","2024-01-10",true
+5,"Esha Nair",37,"F","esha@example.com","9876543210","3 Lake View","Kochi","Kerala","India","2023-09-05",true

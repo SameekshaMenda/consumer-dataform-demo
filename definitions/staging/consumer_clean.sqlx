@@ -1,0 +1,32 @@
+config {
+  type: "table",
+  schema: "consumer_silver",
+  name: "consumer_clean",
+  description: "Cleaned & standardized consumer records (silver layer).",
+  assertions: {
+    nonNull: ["consumer_id"],
+    uniqueKey: ["consumer_id"]
+  }
+}
+
+SELECT
+  consumer_id,
+  TRIM(name)    AS name,
+  age,
+  TRIM(gender)  AS gender,
+  LOWER(TRIM(email)) AS email,
+  CASE
+    WHEN LENGTH(REGEXP_REPLACE(phone, r'[^0-9]', '')) >= 10
+      THEN REGEXP_REPLACE(phone, r'[^0-9]', '')
+    ELSE 'Invalid'
+  END AS phone,
+  TRIM(address) AS address,
+  TRIM(city)    AS city,
+  TRIM(state)   AS state,
+  TRIM(country) AS country,
+  SAFE_CAST(registration_date AS DATE) AS registration_date,
+  is_active
+FROM
+  ${ref("consumer_raw")}
+WHERE
+  consumer_id IS NOT NULL

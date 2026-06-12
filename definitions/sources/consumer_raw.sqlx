@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "<your-gcp-project-id>",
+  schema: "consumer_bronze",
+  name: "consumer_raw",
+  description: "Raw consumer records landed in BigQuery (bronze layer). Loaded externally via bq load for this trial."
+}
