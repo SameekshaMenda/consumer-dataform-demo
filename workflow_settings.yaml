@@ -1,5 +1,6 @@
 dataformCoreVersion: 3.0.59
-defaultProject: incgcp-incture-product
-defaultLocation: asia-south1
-defaultDataset: dataform
+
+defaultProject: project-7bdfeca3-555b-475f-8e3
+defaultLocation: US
+defaultDataset: consumer_silver
 defaultAssertionDataset: dataform_assertions

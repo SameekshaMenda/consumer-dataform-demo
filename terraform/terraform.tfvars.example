@@ -6,3 +6,12 @@ bq_location            = "US"
 github_repo_url        = "https://github.com/<your-username>/consumer-dataform-demo.git"
 github_default_branch  = "main"
 github_pat             = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
+1. command to load data into bronze layer
+bq load \
+  --source_format=CSV \
+  --skip_leading_rows=1 \
+  --autodetect \
+  project-7bdfeca3-555b-475f-8e3:consumer_bronze.consumer_raw \
+  ../sample-data/consumer_raw.csv
